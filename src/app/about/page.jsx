@@ -1,7 +1,16 @@
-function page () {
+'use client'
+
+import { useTasks } from '../../context/TaskContext'
+
+function About () {
+  const { tasks } = useTasks()
+  console.log(tasks)
+
   return (
-    <div>About page</div>
+    <main>
+      <div>About page</div>
+    </main>
   )
 }
 
-export default page
+export default About

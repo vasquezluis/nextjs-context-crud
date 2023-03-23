@@ -1,7 +1,7 @@
-function page () {
+function New () {
   return (
     <div>Task Form</div>
   )
 }
 
-export default page
+export default New
