@@ -1,6 +1,7 @@
 'use client' // ! poner use client porque es codigo que se ejecuta en el cliente, pero next trata de ejecutarlo desde el servidor
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext } from 'react'
 import { v4 as uuid } from 'uuid'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 // * este contiene los datos
 export const TaskContext = createContext()
@@ -17,7 +18,7 @@ const useTasks = () => {
 // ? va a recibir los hijos (paginas)
 // * este provee las funciones
 export const TaskProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useLocalStorage('tasks', [])
 
   const createTask = (title, description) => setTasks(
     [...tasks, { id: uuid(), title, description }]
