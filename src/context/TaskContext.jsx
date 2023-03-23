@@ -16,7 +16,28 @@ const useTasks = () => {
 // ? va a recibir los hijos (paginas)
 // * este provee las funciones
 export const TaskProvider = ({ children }) => {
-  const tareas = [1, 5, 3]
+  const tareas = [
+    {
+      id: 1,
+      title: 'my first task',
+      description: 'some task'
+    },
+    {
+      id: 2,
+      title: 'my second task',
+      description: 'some second task'
+    },
+    {
+      id: 3,
+      title: 'my third task',
+      description: 'some third task'
+    },
+    {
+      id: 4,
+      title: 'my fourth task',
+      description: 'some fourth task'
+    }
+  ]
 
   return (
     <TaskContext.Provider value={{ tasks: tareas }}>
