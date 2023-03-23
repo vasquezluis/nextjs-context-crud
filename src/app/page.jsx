@@ -5,6 +5,7 @@ import TaskCard from '../components/TaskCard'
 
 function Page () {
   const { tasks } = useTasks()
+  console.log(tasks)
 
   return (
 
