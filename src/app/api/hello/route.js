@@ -1,3 +1,3 @@
 export async function GET (request) {
-  return new Response('Hello, Next.js!')
+  return new Response(JSON.stringify({ message: 'hello', body: 'madre mia willy' }))
 }

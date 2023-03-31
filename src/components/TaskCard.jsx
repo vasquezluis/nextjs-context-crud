@@ -1,5 +1,6 @@
 import { useRouter } from 'next/navigation'
 import { useTasks } from '../context/TaskContext'
+import { toast } from 'react-hot-toast'
 
 function TaskCard ({ task }) {
   // * para redireccionar
@@ -13,7 +14,10 @@ function TaskCard ({ task }) {
       <button onClick={(e) => {
         e.stopPropagation()
         const accepted = window.confirm('estas seguro?')
-        if (accepted) deleteTask(task.id)
+        if (accepted) {
+          deleteTask(task.id)
+          toast.success('task deleted succesfuly')
+        }
       }}
       >Delete
       </button>
