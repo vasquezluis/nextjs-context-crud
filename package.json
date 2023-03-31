@@ -16,7 +16,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "react-hot-toast": "^2.4.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vercel": "^28.18.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
