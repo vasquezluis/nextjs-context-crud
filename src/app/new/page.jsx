@@ -35,17 +35,33 @@ function New ({ params }) {
   }, [])
 
   return (
-    <form onSubmit={onSubmit}>
-      <input type='text' placeholder='Write a title' {...register('title', { required: true })} />
+    <div className='flex justify-center items-center h-full'>
+      <form className='bg-gray-700 p-10' onSubmit={onSubmit}>
 
-      {errors.title && (<span>this field is required</span>)}
+        <h2>New Task</h2>
 
-      <textarea placeholder='Write a description' {...register('description', { required: true })} />
+        <input
+          className='bg-gray-800 py-3 px-4 mb-2 block focus:outline-none w-full'
+          type='text' placeholder='Write a title' {...register('title', { required: true })}
+        />
 
-      {errors.description && (<span>this field is required</span>)}
+        {errors.title && (<span className='block text-red-400 mb-2'>this field is required</span>)}
 
-      <button type='submit'>Save</button>
-    </form>
+        <textarea
+          className='bg-gray-800 py-3 px-4 mb-2 block focus:outline-none w-full'
+          placeholder='Write a description'
+          {...register('description', { required: true })}
+        />
+
+        {errors.description && (<span className='block text-red-400 mb-2'>this field is required</span>)}
+
+        <button
+          className='bg-green-500 hover:bg-green-400 px-4 py-2 rounded-sm disabled:opacity-30'
+          type='submit'
+        >Save
+        </button>
+      </form>
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 import { TaskProvider } from '../context/TaskContext'
+import Layout from '@/components/Layout'
 import { Toaster } from './Toaster'
 import './globals.css'
 
@@ -14,9 +15,13 @@ export default function RootLayout ({ children }) {
     <html lang='en'>
       <body>
         <TaskProvider>
-          <h1>Navigation</h1>
+          {/* <h1>Navigation</h1> */}
+
           <Navbar />
-          {children}
+
+          <Layout>
+            {children}
+          </Layout>
 
           <Toaster />
         </TaskProvider>

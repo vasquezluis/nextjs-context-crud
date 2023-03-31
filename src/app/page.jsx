@@ -8,14 +8,15 @@ function Page () {
 
   return (
 
-    <main>
+    <div className='flex justify-center'>
 
-      {tasks.map((task) => (
-        <TaskCard task={task} key={task.id} />
-      ))}
+      <div className='w-7-12'>
+        {tasks.map((task) => (
+          <TaskCard task={task} key={task.id} />
+        ))}
+      </div>
 
-    </main>
-
+    </div>
   )
 }
 
